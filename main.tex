@@ -1,0 +1,147 @@
+%% This file implements a poster template for the 2014 Radboud
+%% University corporate style.
+%%
+%% For comments, questions, and suggestions contact me at
+%% l.onrust@let.ru.nl
+%%
+%% You can distribute and edit the files as you wish, but I'd
+%% love to hear of any changes. Also, if you let me know that
+%% you are using the template, I can keep you up-to-date on
+%% future changes.
+%%
+%% 2 March 2015: fixed the cmyk issue, added rounded corners
+%%               and optional title alignment
+%% Thom Wiggers
+%% September-October 2015: Fixes for A1, bugfixes
+%% 5 April 2018: Fix for newer version of latex
+
+\documentclass[roundedcorners=true, titleposition=center]{beamerthemeruhuisstijlposter}
+%% The class takes the following optional arguments:
+%% roundedcorners: true, false (default=false)
+%% titleposition: left, center, right (default=right)
+
+%%% Change these, duh
+\newcommand{\mytitle}{My Title}
+\newcommand{\myauthor}{Thom Wiggers}
+\newcommand{\mydate}{\today}
+
+\usepackage{lipsum}
+
+\usepackage{grffile}
+\usepackage[british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=false]{microtype}
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={\mytitle},
+    pdfauthor={\myauthor},
+    pdfkeywords={},
+    bookmarksnumbered,
+    pdfstartview={FitH},
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+    breaklinks=true,
+}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{newfloat}
+\usepackage[font={Large,it}]{caption}
+\usepackage[font=large]{subcaption}
+\usepackage{listings}
+\usepackage[all]{xy}
+\usepackage{array}
+\usepackage{booktabs}
+%\usepackage{tabularx}
+\usepackage{xspace}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{wrapfig}
+\usepackage[
+    backend=biber,
+    hyperref=true,
+    backref=false,
+    maxbibnames=99
+]{biblatex}
+
+
+\addbibresource{bibliography.bib}
+%Cryptobib:
+%\addbibresource{../cryptobib/abbrev1.bib}
+%\addbibresource{../cryptobib/crypto_crossref.bib}
+% program floats
+\DeclareFloatingEnvironment{program}
+\floatname{program}{Listing}
+
+\SetTracking{encoding={*}, shape=sc}{0}
+\SetTracking{encoding={*}, shape=tt}{0}
+
+
+%\boldmath
+\listfiles
+
+%%% Include help files
+%\input{macros.tex}
+
+\hyphenation{au-then-ti-ca-ted ar-chi-ve man-ual en-cryp-tion}
+
+\institute[iCIS]{Institute for Computer and Information Sciences\\ Radboud University, Nijmegen, The Netherlands}
+\title{\mytitle}
+\date{\mydate}
+\author{\myauthor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{frame}<2>[fragile]
+\begin{columns}
+\begin{column}{0.50\textwidth}
+\begin{beamercolorbox}[center, wd=\textwidth]{postercolumn}
+\begin{minipage}[T][\columnheight][t]{0.98\textwidth}
+
+    \begin{block}{Block 1}
+        \lipsum[1]
+    \end{block}
+
+    \begin{block}{Block 2}
+        \lipsum[2-3]
+    \end{block}
+
+    \begin{block}{Block 3}
+        \lipsum[4]
+    \end{block}
+
+    \begin{block}{Block 4}
+        \lipsum[5-6]
+    \end{block}
+\end{minipage}
+\end{beamercolorbox}
+\end{column}
+
+% right column
+
+\begin{column}{0.50\textwidth}
+\begin{beamercolorbox}[center, wd=\textwidth]{postercolumn}
+\begin{minipage}[T][\columnheight][t]{0.98\textwidth}
+    \begin{block}{Block 5}
+        \lipsum[7-10]
+    \end{block}
+
+    \begin{block}{Block 6}
+        \lipsum[11]
+    \end{block}
+
+    \begin{block}{Block 7}
+        \lipsum[12-14]
+    \end{block}
+
+\end{minipage}
+\end{beamercolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+\end{document}
