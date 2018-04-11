@@ -18,7 +18,7 @@ preview:
 
 .PHONY: clean
 clean:
-	-latexmk -C
+	-latexmk -C $(MAINFILE)
 	-rm -f *.bbl *.run.xml *.nav *.snm *.bbl *.auxlock *.vrb
 
 .PHONY: clean-figs
